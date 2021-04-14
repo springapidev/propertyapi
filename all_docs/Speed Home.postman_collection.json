@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "48efaadb-ffa0-4066-a441-70c35a294568",
+		"name": "Speed Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\": \"sami\",\r\n \"password\":\"12345678\",\r\n\"email\":\"sami@gmail.com\",\r\n\"mobile\":\"01686239146\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Using Username and Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"sami\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "sami",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User List By JWT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJib3NzIiwiZXhwIjoxNjE5MjI3NzQ3fQ.G80OmUytsO4yZDDd9awLzpDoZGPj_dW42eGFN6HdXNEhoa1rVLWfpE6zMJLqOXt4hM0ZZlRmOFRDY1EXLLm08Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User by Id BY JWT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country\": \"USA\",\r\n  \"description\": \"Awesome Property\",\r\n  \"owner\": \"Mr. X\",\r\n  \"price\": 350000.0,\r\n  \"status\": \"NEW\",\r\n  \"title\": \"New York Land Rover Area\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/property/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Propery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country\": \"USA\",\r\n  \"description\": \"Awesome Property\",\r\n  \"owner\": \"Mr. X\",\r\n  \"price\": 300000.0,\r\n  \"status\": \"NEW\",\r\n  \"title\": \"New York Land Rover Area\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/property/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Property Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5Mjk2MjAzfQ.sg_iJNLWBKLTuLMd-Gfo3IV46WU3oQ92J4MARMKIV_mRCNeGpEacdJjej7saRvnEJ9V3E-VinT0FBQq_ov0XVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/property/approved/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"approved",
+						"6"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Of Property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/property/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Of Property By User Only",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/property/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/property/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By ID, BUT User only see his/her own",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1pIiwiZXhwIjoxNjE5MjEyNDk5fQ.sV7JpjvBURWv5kn5f1NWq0YqTMrBf5NEsxFXVqzxYIvvYuklH9rJmRhpnv5I-l2PgjD39_5_j61JAAZJz6gbpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/property/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"property",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
